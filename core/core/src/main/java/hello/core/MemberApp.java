@@ -9,8 +9,9 @@ public class MemberApp {
 
     public static void main(String[] args) {
         //순수 자바로 개발해보기.
+        AppConfig appConfig = new AppConfig();
 
-        MemberService memberService = new MemberServiceImpl();
+        MemberService memberService = appConfig.memberService();
         Member member = new Member(1L,"memberA", Grade.VIP);
         memberService.join(member);
 
