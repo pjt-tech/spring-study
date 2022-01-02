@@ -20,6 +20,7 @@ public class ApplicationContextBasicFindTest {
     @DisplayName("빈 이름으로 조회")
     public void findBeanByName() throws Exception {
         //given
+        //빈 이름으로 조회
         MemberService memberService = ac.getBean("memberService", MemberService.class);
         //when
         System.out.println("memberService = " + memberService);
@@ -33,6 +34,7 @@ public class ApplicationContextBasicFindTest {
     @DisplayName("이름 없이 타입으로만 조회")
     public void findBeanByType() throws Exception {
         //given
+        //빈이름 없이 타입으로만 조회
         MemberService memberService = ac.getBean(MemberService.class);
         assertThat(memberService).isInstanceOf(MemberServiceImpl.class);
     }
@@ -42,6 +44,7 @@ public class ApplicationContextBasicFindTest {
     @DisplayName("구체 타입으로 조회")
     public void findBeanByName2() throws Exception {
         //given
+        //구체 클래스 타입으로 빈 조회
         MemberService memberService = ac.getBean("memberService", MemberServiceImpl.class);
         //when
         assertThat(memberService).isInstanceOf(MemberServiceImpl.class);
@@ -53,6 +56,7 @@ public class ApplicationContextBasicFindTest {
     public void findBeanByNameX() throws Exception {
 
         //MemberService xxxx = ac.getBean("xxxx", MemberService.class);
+        //조회한 이름의 빈이 없으면 해당예외가 반드시 터져야한다.
         assertThrows(NoSuchBeanDefinitionException.class,
                 () -> ac.getBean("xxxx", MemberService.class));
     }
