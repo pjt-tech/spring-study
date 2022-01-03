@@ -14,6 +14,7 @@ public class MemberApp {
         //AppConfig appConfig = new AppConfig();
         //MemberService memberService = appConfig.memberService();
 
+        //스프링 컨테이너 사용하기. 스프링 전환
         ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
         //기본적으로 메서드이름으로 빈이 등록된다. 찾을때 메서드이름으로 찾으면된다.
         MemberService memberService = applicationContext.getBean("memberService", MemberService.class);
