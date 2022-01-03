@@ -1,17 +1,17 @@
 package hello.core.discount;
 
 import hello.core.member.*;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component //자동 빈 등록
+//@RequiredArgsConstructor //롬복의 final 멤버의 생성자 자동주입 생성
 public class OrderServiceImpl implements OrderService {
 
-    private MemberRepository memberRepository;
-    private DiscountPolicy discountPolicy;
+    private final MemberRepository memberRepository;
+    private final DiscountPolicy discountPolicy;
 
-
-    @Autowired //의존관계 자동 주입
+    //@Autowired //의존관계 자동 주입
     public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
