@@ -62,8 +62,6 @@ public class SingletonTest {
         System.out.println("memberService1 = " + memberService1);
         System.out.println("memberService2 = " + memberService2);
 
-        //memberService1 != memberService2
-        //메모리 낭비가 심하다.
         assertThat(memberService1).isSameAs(memberService2);
 
     }
