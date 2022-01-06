@@ -6,5 +6,4 @@ public class StatefulService {
         System.out.println("name = " + name + " price = " + price);
         return price;
     }
-
 }

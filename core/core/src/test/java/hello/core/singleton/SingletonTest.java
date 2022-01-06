@@ -50,15 +50,12 @@ public class SingletonTest {
     @DisplayName("스프링 컨테이너와 싱글톤")
     void singletonContainer() {
         //AppConfig appConfig = new AppConfig();
+        //AppConfig 에 @Configuration을 붙여준 상태
         ApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
 
-        //호출할때 마다 객체를 생성
         MemberService memberService1 = ac.getBean("memberService",MemberService.class);
-
-        //호출할때 마다 객체를 생성
         MemberService memberService2 = ac.getBean("memberService",MemberService.class);
 
-        //참조값 다른것을 확인
         System.out.println("memberService1 = " + memberService1);
         System.out.println("memberService2 = " + memberService2);
 

@@ -4,6 +4,7 @@ import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.ScopedProxyMode;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
@@ -25,7 +26,7 @@ public class PrototypeTest {
         ac.close();
     }
 
-    @Scope("prototype")
+    @Scope(value = "prototype")
     static class PrototypeBean{
         @PostConstruct
         public void init() {
