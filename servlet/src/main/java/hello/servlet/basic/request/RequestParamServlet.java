@@ -15,12 +15,14 @@ public class RequestParamServlet extends HttpServlet {
         System.out.println("[전체 파라미터 조회] - start");
 
         //조회방식이 get 쿼리 파라미터 방식과 post html form 방식 둘다 가능하다.
+        //쿼리파라미터모두조회
         request.getParameterNames().asIterator()
                     .forEachRemaining(paramName -> System.out.println(paramName + "=" + request.getParameter(paramName)));
 
         System.out.println("[전체 파라미터 조회] - end");
         System.out.println();
 
+        //하나씩 조회
         String name = request.getParameter("username");
         String age = request.getParameter("age");
         System.out.println("username = " + name);
