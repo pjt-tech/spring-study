@@ -1,18 +1,20 @@
 package com.hello.springcore.order;
 
 import com.hello.springcore.discount.DiscountPolicy;
-import com.hello.springcore.discount.FixDiscountPolicy;
-import com.hello.springcore.discount.RateDiscountPolicy;
 import com.hello.springcore.member.Member;
 import com.hello.springcore.member.MemberRepository;
-import com.hello.springcore.member.MemoryMemberRepository;
-
 
 public class OrderServiceImpl implements OrderService{
 
-    private final MemberRepository memberRepository = new MemoryMemberRepository();
-    //private final DiscountPolicy discountPolicy = new FixDiscountPolicy();
-    private final DiscountPolicy discountPolicy = new RateDiscountPolicy();
+    //추상화에만 의존하고 구성영역에서 구현체를 생성자를 통해 주입받는다.
+    //이제 각자 기능만 실행시키면된다. AppConfig의 등장으로 OCP,DIP 를 만족시키는 코드로 변경되었다.
+    private final MemberRepository memberRepository;
+    private final DiscountPolicy discountPolicy;
+
+    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
+        this.memberRepository = memberRepository;
+        this.discountPolicy = discountPolicy;
+    }
 
     @Override
     public Order createOrder(Long id, String itemName, int price) {
