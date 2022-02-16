@@ -1,8 +1,6 @@
 package hello.core.order;
 
 import hello.core.discount.FixDiscountPolicy;
-import hello.core.discount.Order;
-import hello.core.discount.OrderServiceImpl;
 import hello.core.member.Grade;
 import hello.core.member.Member;
 import hello.core.member.MemberRepository;

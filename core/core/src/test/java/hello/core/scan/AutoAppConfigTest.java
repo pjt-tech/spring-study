@@ -1,10 +1,8 @@
 package hello.core.scan;
 
 import hello.core.AutoAppConfig;
-import hello.core.discount.OrderService;
-import hello.core.discount.OrderServiceImpl;
+import hello.core.order.OrderService;
 import hello.core.member.MemberService;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
