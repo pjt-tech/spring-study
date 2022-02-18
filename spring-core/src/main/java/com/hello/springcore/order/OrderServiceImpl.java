@@ -3,7 +3,10 @@ package com.hello.springcore.order;
 import com.hello.springcore.discount.DiscountPolicy;
 import com.hello.springcore.member.Member;
 import com.hello.springcore.member.MemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class OrderServiceImpl implements OrderService{
 
     //추상화에만 의존하고 구성영역에서 구현체를 생성자를 통해 주입받는다.
@@ -12,6 +15,7 @@ public class OrderServiceImpl implements OrderService{
     private final MemberRepository memberRepository;
     private final DiscountPolicy discountPolicy;
 
+    @Autowired //기존 AppConfig로 수동등록이 아닌 컴포넌트 스캔을 사용하면 Autowired를 사용하여 의존관계 자동 등록을 해줘야 한다.
     public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;

@@ -1,5 +1,8 @@
 package com.hello.springcore.member;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class MemberServiceImpl implements MemberService{
 
     //추상화에만 의존한다. 구현체는 생성자로부터 주입받는다.
