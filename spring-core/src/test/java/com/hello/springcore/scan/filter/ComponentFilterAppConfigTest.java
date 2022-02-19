@@ -27,7 +27,7 @@ public class ComponentFilterAppConfigTest {
     @Configuration
     @ComponentScan(
             includeFilters = @Filter(classes = MyIncludeComponent.class),
-                    excludeFilters = @Filter(classes = MyExcludeComponent.class))
+            excludeFilters = @Filter(classes = MyExcludeComponent.class))
     static class ComponentFilterAppConfig{
 
     }

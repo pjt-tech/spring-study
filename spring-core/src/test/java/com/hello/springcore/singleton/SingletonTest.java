@@ -26,7 +26,7 @@ public class SingletonTest {
     }
 
     @Test
-    @DisplayName("스프링 컨터이너와 싱글톤")
+    @DisplayName("스프링 컨테이너와 싱글톤")
     public void springContainer() throws Exception {
         //스프링 컨테이너는 싱글톤으로 빈을 등록하고 제공한다.
         ApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);

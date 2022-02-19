@@ -40,6 +40,7 @@ public class ApplicationContextExtendsFindTest {
     @Test
     @DisplayName("특정 하위타입으로 조회하면 된다.")
     void findBeanBySubType() {
+        //가장 안좋은 방법
         DiscountPolicy rateDiscountPolicy = ac.getBean("rateDiscountPolicy", RateDiscountPolicy.class);
         assertThat(rateDiscountPolicy).isInstanceOf(RateDiscountPolicy.class);
     }
@@ -47,7 +48,7 @@ public class ApplicationContextExtendsFindTest {
     @Test
     @DisplayName("부모 타입으로 모두 조회하기")
     void findAllBeanByParentType() {
-
+        //getBean 으로 꺼내면 충돌나기때문에 getBeansOfType 으로 꺼내서 Map 으로 받아서 꺼내야 한다.
         Map<String, DiscountPolicy> beansOfType = ac.getBeansOfType(DiscountPolicy.class);
         for (String key : beansOfType.keySet()) {
             System.out.println("key = " + key + " value = " + beansOfType.get(key));
@@ -57,7 +58,7 @@ public class ApplicationContextExtendsFindTest {
     @Test
     @DisplayName("오브젝트 타입으로 모두 조회하기")
     void findAllBeanByObjectType() {
-
+        //스프링에 등록 된 모든 빈 조회하기.
         Map<String, Object> beansOfType = ac.getBeansOfType(Object.class);
         for (String key : beansOfType.keySet()) {
             System.out.println("key = " + key + " value = " + beansOfType.get(key));
