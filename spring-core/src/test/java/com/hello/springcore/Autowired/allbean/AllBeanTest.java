@@ -4,7 +4,6 @@ import com.hello.springcore.AutoAppConfig;
 import com.hello.springcore.discount.DiscountPolicy;
 import com.hello.springcore.member.Grade;
 import com.hello.springcore.member.Member;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
