@@ -13,6 +13,7 @@ public class NetworkClient {
 
     public void setUrl(String url) {
         this.url = url;
+        System.out.println("NetworkClient.setUrl");
     }
 
     //서비스 시작시 호출
