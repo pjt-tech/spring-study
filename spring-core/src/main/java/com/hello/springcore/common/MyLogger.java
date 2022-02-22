@@ -9,7 +9,7 @@ import javax.annotation.PreDestroy;
 import java.util.UUID;
 
 @Component
-@Scope(value = "request", proxyMode = ScopedProxyMode.TARGET_CLASS) //가자 Proxy객체를 주입해주기때문에 ObjectProvider를 사용하지 않아도 된다.
+@Scope(value = "request", proxyMode = ScopedProxyMode.TARGET_CLASS) //가짜 Proxy객체를 주입해주기때문에 ObjectProvider를 사용하지 않아도 된다.
 public class MyLogger {
 
     private String uuid;
